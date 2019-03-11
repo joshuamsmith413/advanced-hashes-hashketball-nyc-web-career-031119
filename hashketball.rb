@@ -266,25 +266,25 @@ end
   foo = 0
   bar = 0
   winner = ""
-  game_hash[:home][:players].each do |name, stats|
-  stats.each do |data, item|
-  if data == :points
-  foo += item
-  end
-  end
+    game_hash[:home][:players].each do |name, stats|
+      stats.each do |data, item|
+        if data == :points
+          foo += item
+        end
+      end
   end
   game_hash[:away][:players].each do |name, stats|
-  stats.each do |data, item|
-  if data == :points
-  bar += item
+    stats.each do |data, item|
+      if data == :points
+        bar += item
+      end
+    end
   end
-  end
-  end
-  if foo > bar
-  winner = game_hash[:home][:team_name]
-  else
-  winner = game_hash[:away][:team_name]
-  end
+    if foo > bar
+      winner = game_hash[:home][:team_name]
+    else
+      winner = game_hash[:away][:team_name]
+    end
   winner
   end
 
